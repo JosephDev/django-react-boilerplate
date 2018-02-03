@@ -1,0 +1,98 @@
+$breakpoint-xxs-height: 372px !default; // iPhone4
+$breakpoint-xs-height: 460px !default; // iPhone5
+$breakpoint-sm: 500px !default;
+$breakpoint-md: 769px !default;
+$breakpoint-lg: 1025px !default;
+$breakpoint-xl: 2000px !default;
+
+$breakpoint-iphone5-portrait: 320px;
+$breakpoint-iphone5-landscape: 568px;
+$breakpoint-iphone6-portrait: 375px;
+$breakpoint-iphone6-landscape: 667px;
+$breakpoint-iphone6p-portrait: 414px;
+$breakpoint-iphone6p-landscape: 736px;
+$breakpoint-ipad-portrait: 768px;
+$breakpoint-ipad-pro-10_5-portrait: 834px;
+$breakpoint-ipad-landscape: 1024px;
+
+@mixin iphone5-portrait() {
+  @media (min-width: $breakpoint-iphone5-portrait) {
+    @content;
+  }
+}
+@mixin iphone5-landscape() {
+  @media (min-width: $breakpoint-iphone5-landscape) {
+    @content;
+  }
+}
+@mixin iphone6-portrait() {
+  @media (min-width: $breakpoint-iphone6-portrait) {
+    @content;
+  }
+}
+@mixin iphone6-landscape() {
+  @media (min-width: $breakpoint-iphone6-landscape) {
+    @content;
+  }
+}
+@mixin iphone6p-portrait() {
+  @media (min-width: $breakpoint-iphone6p-portrait) {
+    @content;
+  }
+}
+@mixin iphone6p-landscape() {
+  @media (min-width: $breakpoint-iphone6p-landscape) {
+    @content;
+  }
+}
+@mixin ipad-portrait() {
+  @media (min-width: $breakpoint-ipad-portrait) {
+    @content;
+  }
+}
+@mixin ipad-pro-10_5-portrait() {
+  @media (min-width: $breakpoint-ipad-pro-10_5-portrait) {
+    @content;
+  }
+}
+@mixin ipad-landscape() {
+  @media (min-width: $breakpoint-ipad-landscape) {
+    @content;
+  }
+}
+
+@mixin sm() {
+  @media (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin md() {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin lg() {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin xl() {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+@mixin xxs-height() {
+  @media (max-height: $breakpoint-xxs-height) {
+    @content;
+  }
+}
+
+@mixin xs-height() {
+  @media (max-height: $breakpoint-xs-height) {
+    @content;
+  }
+}

@@ -1,0 +1,69 @@
+body {
+  padding: 5%;
+  color: #333333;
+}
+
+.Menu {
+  display: flex;
+  flex-wrap: nowrap;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  .Menu-links {
+    max-width: 960px;
+    .Menu-link {
+      line-height: 3rem; 
+      padding: 0.2rem;
+      margin: 0.6rem;
+      color: $link-color;
+      text-decoration: none;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      border-bottom: 3px solid #eeeeee;
+      &.Menu-link--active {
+        border-bottom: 3px solid #5900ff;
+      }
+    }
+  }
+}
+
+// blog
+.Blog {
+  .create-post {
+    margin-bottom: 2rem;
+    background: #eeeeee;
+    padding: 2rem;
+    input { width: 100%; margin: 0.2rem 0; }
+    button { width: 100%; margin-top: 1rem; }
+    .error { font-size: 0.8rem; color: $error-color; }
+  }
+  
+  .Blog-post {
+    border: 1px solid $line-color;
+    border-radius: 0.3rem;
+    box-shadow: 0.1rem 0.1rem rgba(0, 0, 0, 0.1);
+    padding: 0.2rem 1rem;
+    margin-bottom: 1rem;
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      p { 
+        font-size: 0.8rem; 
+        color: $mute-text;
+      }
+    }
+  }  
+}
+
+button {
+  border: 1px solid #666666;
+  background: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+}
+
+input[type="text"] {
+  border: 1px solid $line-color;
+  padding: 0.5rem;
+}

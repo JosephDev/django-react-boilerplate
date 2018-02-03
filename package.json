@@ -1,0 +1,93 @@
+{
+  "name": "django-react-template",
+  "version": "0.0.1",
+  "private": false,
+  "license": "MIT",
+  "main": "build/client/server.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "client:dev": "webpack-dev-server",
+    "client:watch": "cross-env HYDRATE=\"true\" webpack",
+    "client:build": "npm run clean && cross-env NODE_ENV=\"production\" webpack",
+    "client:build-hydrate": "npm run clean && cross-env HYDRATE=\"true\" cross-env NODE_ENV=\"production\" webpack",
+    "client:preview": "npm run clean && cross-env NODE_ENV=\"production\" webpack-dev-server",
+    "server:dev": "source/server/manage.py runserver",
+    "universal:dev": "concurrently -c blue,cyan,yellow --names \"build-server,build-client,node-server\" --kill-others \"npm run server:watch\" \"npm run client:watch\" \"npm run server:restart\"",
+    "universal:build": "npm run client:build-hydrate && npm run server:build",
+    "clean": "rm -rf ./source/client/build",
+    "lint-hook": "eslint ./source/js ./webpack ./*.js -f table --ext .js --ext .jsx",
+    "lint": "npm run lint-hook --silent || true",
+    "hook-add": "prepush install",
+    "hook-remove": "prepush remove",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.1.2",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-syntax-decorators": "^6.13.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-optimize": "^1.0.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "cross-env": "^5.1.3",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.14.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.5.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.7.2",
+    "prepush": "^3.1.11",
+    "react-svg-loader": "^2.1.0",
+    "redux-logger": "^3.0.6",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
+    "svgo": "^1.0.3",
+    "svgo-loader": "^2.1.0",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "immutability-helper": "^2.6.4",
+    "immutable": "^3.8.2",
+    "isomorphic-fetch": "^2.2.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-form": "^2.16.1",
+    "react-hot-loader": "^4.0.0-beta.12",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-saga": "^0.16.0"
+  },
+  "description": "Starter boilerplate for Djnago, React and Redux, using Webpack 3",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/joedev/django-react-template.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "webpack2",
+    "boilerplate"
+  ],
+  "author": "joe kim",
+  "bugs": {
+    "url": "https://github.com/joedev/django-react-template/issues"
+  },
+  "homepage": "https://github.com/joedev/django-react-template#readme",
+  "prepush": [
+    "npm run lint-hook --silent"
+  ]
+}
